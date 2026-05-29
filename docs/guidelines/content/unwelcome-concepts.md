@@ -46,7 +46,6 @@ Examples of this are achievements for simply starting a game, collecting a singl
 When these are acceptable:
 
 - "Disclaimer" achievements meant to inform the player about restrictions in the achievement sets. These should only exist when the player can lock themselves out of multiple achievements without even realizing it.
-- Not skipping an opening cinematic if it had been considered a big deal at the time.
 - Addressing something fun, historical, or interesting.
 
 ## Requires Glitches
@@ -91,13 +90,20 @@ When these are acceptable:
 
 - Bonus subsets or subsets specifically approved for grinding tasks are an exception to this policy and may be implemented.
 
-## Overly RNG Reliant
+## Overly RNG Reliant Without Purpose
 
-Rely entirely on randomness, especially when there are extremely low odds.
+Rely entirely on randomness and does not serve a purpose, especially when there are extremely low odds.
 
 When these are acceptable:
 
 - Games or mini-games where the randomness is a major aspect.
+
+Examples of acceptable purpose:
+
+- Rewarding an exclusive item (the item does not have to be useful to the player)
+- Awarding an in-game achievement
+- Displaying unique dialogue
+- Playing a unique cutscene
 
 ## "Secret Achievements"
 
@@ -110,6 +116,10 @@ When these are acceptable:
 ## Overly Cumbersome Requirements
 
 Achievements with restrictions or requirements that cannot be fully expressed within the description character limit. A player should be able to view achievement requirements directly within their emulator, without needing to visit the RetroAchievements website.
+
+:::tip APPLIES ONLY TO DESCRIPTIONS
+This unwelcome concept applies only to the description. If a description is clear, but the steps needed to meet the goal of the achievement are tricky, the achievement does *NOT* fall under this category.
+:::
 
 - Comments on the achievement that include additional restrictions or requirements are not allowed.
 - Required external resources like pastebin links are not allowed.
@@ -134,6 +144,7 @@ Let's face it. There are some games, or 'games,' rather, that are not fit for ac
 - [Games That Lack Gameplay](#games-that-lack-gameplay)
 - [Compilations and Multi-Carts](#compilations-and-multi-carts)
 - [Betas, Demos, and Prototypes](#betas-demos-and-prototypes)
+- [Work in Progress Hacks and Homebrews](#work-in-progress-hacks-and-homebrews)
 
 ## Games That Lack Gameplay
 
@@ -149,6 +160,16 @@ If a compilation or multi-cart features games that share the same console, then 
 
 If the game ended up having an official release, then these are generally not allowed unless there is unique content. Games that only existed as betas, demos, or prototypes are typically fine, so long as they're actually playable (some prototypes barely qualify).
 
+## Work in Progress Hacks and Homebrews
+
+Hacks and homebrews that are under development are generally not allowed. Some exceptions are allowed, including:
+
+- Hacks and homebrews that are feature complete, meaning an early set is able to include Progression and Win Condition achievements that would stay the same conceptually in further updates.
+- Abandoned hacks and homebrews where the developer has explicitly stated no more updates by them will follow.
+- Abandoned hacks and homebrews that have not received any game update in over 2 years, and no news or updates from the developer(s) about the project in over a year.
+
+When in doubt, confirm eligibility with Developer Compliance.
+
 ## Rich Presence Custom Name Restriction
 
 Rich Presence that directly displays custom player input text is prohibited. The most common example being displaying what a player inputs as their character or file name directly into Rich Presence.
@@ -157,10 +178,31 @@ This restriction helps in preventing inappropriate or offensive content from sho
 
 ## Banned Titles
 
-While we at RetroAchievements recognize that the content of retro video games may be divisive or out of touch with how global cultures have developed over time, we believe it's necessary to support content from all sides of gaming history and to play our part in preserving this era in video games, be it good or bad. Depending on the severity, the admin team may opt to remove point values or otherwise take action to keep troublesome content from being incentivized, but as a matter of policy, we only ban retail games from the site on the basis of preventing legal issues. Below is an incomplete list of such titles, to be updated as necessary.
+RetroAchievements will not approve achievement sets for games that contain:
+- Illegal content. Content that is illegal to own or distribute in major jurisdictions.
+- Glorified hate speech. Content that intentionally targets individuals or groups based on race, ethnicity, religion, gender, sexual orientation, or other protected characteristics.
+- Sexual exploitation. Glorification of sexual assault, non-consensual acts, or child sexual abuse material.
+- Extreme or abhorrent content. Content that violates community standards in a way that undermines RetroAchievements’ values.
+
+Games that have been rated by official ratings boards (ESRB, PEGI, or similar organizations) are considered acceptable, as these games have undergone professional content review. The only exception is if a game contains content that is illegal to own or distribute, regardless of its rating status.
+
+Hacks, homebrew, and unlicensed games do not undergo ratings board review and will receive additional scrutiny to ensure compliance with this new policy.
+
+This policy provides guidance, but is not exhaustive. The RA team reserves the right to evaluate games on a case-by-case basis and make determinations in the best interest of maintaining a safe, legal, welcoming, and inclusive community.
+
+### Retail Releases
 
 |                     Title                     | Year |      Platform      |
 | :-------------------------------------------: | :--: | :----------------: |
-| • Lolita Syndrome<br>• ロリータ・シンドローム | 1983 |    FM-7, PC-88     |
-|        • My Lolita<br>• マイ・ロリータ        | 1984 |    FM-7, PC-88     |
-|                • The Guy Game                 | 2004 | PS2, Xbox, Windows |
+|                  177                          | 1986 |       PC-88        |
+|             Custer's Revenge                  | 1982 |     Atari 2600     |
+| Lolita Syndrome<br>ロリータ・シンドローム        | 1983 |    FM-7, PC-88     |
+|        My Lolita<br>マイ・ロリータ              | 1984 |    FM-7, PC-88     |
+|                The Guy Game                   | 2004 | PS2, Xbox, Windows |
+
+### Hacks, Homebrew, and Unlicensed Releases
+
+|                     Title                            | Year | Platform |
+| :--------------------------------------------------: | :--: | :------: |
+|              Pokémon Clover                          | 2017 | GBA      |
+| Pokémon Periwinkle Version - Special Blobbos Edition | 2019 | GB       |

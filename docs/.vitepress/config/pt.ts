@@ -187,6 +187,14 @@ function sidebarGuidelines(): DefaultTheme.SidebarItem[] {
     //       text: "Tratamento de Tickets",
     //       link: "/pt/guidelines/developers/handling-tickets",
     //     },
+    //     {
+    //       text: "Maintainership Role",
+    //       link: "/pt/guidelines/developers/maintainership",
+    //     },
+    //     {
+    //       text: "Set and Achievement Contribution Credit",
+    //       link: "/guidelines/developers/credit",
+    //     },
     //   ],
     // },
     // {
@@ -265,6 +273,10 @@ function sidebarGuidelines(): DefaultTheme.SidebarItem[] {
     //     {
     //       text: "Etiquetas de Hash",
     //       link: "/pt/guidelines/content/hash-labels",
+    //     },
+    //     {
+    //       text: "Requisitos de Refactoring",
+    //       link: "/pt/guidelines/content/refactoring-requirements",
     //     },
     //   ],
     // },

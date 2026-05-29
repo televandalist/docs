@@ -13,13 +13,19 @@ When excavating the memory of these old consoles it helps to know what the origi
 
 ### Memory Mirroring
 
-![nes_mem_mirror](/public/nes-memory-mirroring.png)
+![nes_mem_mirror](/nes-memory-mirroring.png)
 
 When using the memory inspector to find variables for NES games, there will be 4 copies of everything you find. If you're wondering "which one do I use?" or "should I check for all of them?" it's not as complicated as it seems.
 
 This is a feature of the NES that gave developers more ways of looking at memory. Because the NES itself only has 2KB of RAM, the first result (the one below 0x800) should be used for consistency, and applying additional conditions on the others will do nothing.
 
 This applies to RPS and leaderboards as well.
+
+## Famicom Disk System
+
+### Testing
+
+Be sure to test with the **FDS: Automatically insert disk** and **FDS: Fast forward while loading** settings both enabled and disabled. Sometimes they can affect state values, especially game state/mode that interacts with loading.
 
 ## Game Boy
 
@@ -40,7 +46,7 @@ For more info see: http://gameboy.mongenel.com/dmg/asmmemmap.html
 
 ### ECHO RAM
 
-![gb_echo_ram](/public/game-boy-echo-ram.png)
+![gb_echo_ram](/game-boy-echo-ram.png)
 
 Similarly to the NES, certain variables may show up twice when searching in the Memory Inspector. The second result is in what's called the ECHO RAM, which is a mirror of the actual memory. Since some emulators tend to ignore this area or emulate it incorrectly, it's recommended to NOT use it at all and always use the first result.
 
@@ -137,14 +143,36 @@ Checks if the 8-bit value at 0x18BAB5 is equal to 0x20. This means 0x18BAB5 cont
 - Pointers always start with a `0x02`. For example, a pointer pointing directly to `0x13f944` will be `0x0213f944`.
 - DSi mode can be detected when bit0 & bit1 are 1 at 0x400. This is known to slightly shift memory on some games and so it could be used to protect against the mode if needs be.
 
-## Nintendo DSi (Bizhawk)
+## Nintendo DSi
 
 - **0xfffe00: DSi Mode String** ASCII String that identifies the DSi Game being played. Can be used to check if you are in the game rather than on the DSi home screen, etc.
 
 ## GameCube
 
-- Serial is located at **0x00000000** as a string of ASCII characters. Revision Number seems to typically be stored at **0x00000007**. You can use these to determine the specific disc loaded.
+- Identification of the game/disc:
+  - Serial is located at **0x00000000** as a string of ASCII characters.
+  - Disc Number (for multidisk games) is stored at **0x80000006**. (0 = Disc 1)
+  - Revision Number is stored at **0x00000007**.
+  - You can use these to determine the specific disc loaded.
 - GameCube uses a PowerPC chipset with big-endian data. Filter using `16-Bit BE`, `32-Bit BE`, `Float BE`, and `Double32 BE` for data types wider than 1 byte (8-bits). Data is typically aligned on Gamecube, so 16-Bit data is always at an even address and 32-bit data addresses at a multiple of 4, etc.
+- Gamecube has one bank of RAM, 24MB, located at `0x80000000-0x817FFFFF`, which is mapped at `0x00000000-0x017FFFFF` in the RA toolkit.
+  - Therefore, pointers found will start with 0x8, and to use them, you can mask them using `0x1fffffff` to convert to RA addressing.
+  - `Add Address 32-Bit BE Pointer & 0x1fffffff`
+  - Uncached mirror of the RAM exists as well at `0xC0000000`. If you happen to find pointers that begin with 0xC, the same masking scheme will work to convert them to the RA addressing.
+
+## Wii
+
+- Identification of a retail game/disc:
+  - Serial is located at **0x00000000** as a string of ASCII characters.
+  - Disc Number (for multidisk games) is stored at **0x80000006**. (0 = Disc 1)
+  - Revision Number is stored at **0x00000007**.
+  - You can use these to determine the specific disc loaded.
+- WiiWare game ID is located at **0x00003180** as a 4-byte string of ASCII characters.
+- Wii uses a PowerPC chipset with big-endian data. Filter using `16-Bit BE`, `32-Bit BE`, `Float BE`, and `Double32 BE` for data types wider than 1 byte (8-bits). Data is typically aligned on Wii, so 16-Bit data is always at an even address and 32-bit data addresses at a multiple of 4, etc.
+- Wii has two banks of RAM, 24MB called "MEM1" located at `0x80000000-0x817FFFFF`, which is mapped at `0x00000000-0x017FFFFF` in the RA toolkit, and 64MB called "MEM2" located at `0x90000000-0x93FFFFFF`, which is mapped at `0x10000000-0x13FFFFFF` in the RA toolkit.
+  - Therefore, pointers found will start with 0x8 or 0x9, and to use them, you can mask them using `0x1fffffff` to convert to RA addressing.
+  - `Add Address 32-Bit BE Pointer & 0x1fffffff`
+  - Uncached mirrors of MEM1 and MEM2 exist as well at `0xC0000000` and `0xD0000000`, respectively. If you happen to find pointers that begin with 0xC or 0xD, the same masking scheme will work to convert them to the RA addressing.
 
 ## Neo Geo
 
@@ -157,10 +185,10 @@ Fortunately, part of UniBIOS data seems to be reflected in two address strings i
 To protect achievements from using UniBIOS, all we need to do is to include a simple protection which will reset when `0x00fe30` in 32-bit size is not equal to `0`. This additionally protects the achievement from unlocking during RAM diagnostic process.
 
 **Here is how the protection should look (selected in the Achievement Editor):**
-![unineo1](/public/unibiosprotection.png)
+![unineo1](/unibiosprotection.png)
 
 **Here is how the same RAM region looks when other BIOS are used (here MSV):**
-![unineo2](/public/unibiosp2.png)
+![unineo2](/unibiosp2.png)
 
 ## PlayStation
 

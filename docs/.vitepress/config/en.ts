@@ -64,8 +64,16 @@ function sidebarGeneral(): DefaultTheme.SidebarItem[] {
         //   link: "/general/setup-guide",
         // },
         {
+          text: "Glossary",
+          link: "/general/glossary",
+        },
+        {
           text: "Emulator Support",
           link: "/general/emulator-support-and-issues",
+        },
+        {
+          text: "Hardcore Compliance Requirements",
+          link: "/general/hardcore-compliance-requirements",
         },
         {
           text: "Standalone Support",
@@ -76,7 +84,7 @@ function sidebarGeneral(): DefaultTheme.SidebarItem[] {
           link: "/general/how-ra-works",
         },
         {
-          text: "Ways to Contribute",
+          text: "How to contribute if you're not a developer",
           link: "/general/ways-to-contribute",
         },
         {
@@ -180,6 +188,14 @@ function sidebarGuidelines(): DefaultTheme.SidebarItem[] {
           text: "Handling Tickets",
           link: "/guidelines/developers/handling-tickets",
         },
+        {
+          text: "Maintainership Role",
+          link: "/guidelines/developers/maintainership",
+        },
+        {
+          text: "Set and Achievement Contribution Credit",
+          link: "/guidelines/developers/credit",
+        },
       ],
     },
     {
@@ -247,8 +263,12 @@ function sidebarGuidelines(): DefaultTheme.SidebarItem[] {
           link: "/guidelines/content/achievements-for-rom-hacks",
         },
         {
-          text: "Subsets",
+          text: "Multiset and Subset Types",
           link: "/guidelines/content/subsets",
+        },
+        {
+          text: "Subset Design",
+          link: "/guidelines/content/subset_design",
         },
         {
           text: "Working with the Right ROM",
@@ -257,6 +277,10 @@ function sidebarGuidelines(): DefaultTheme.SidebarItem[] {
         {
           text: "Hash Labels",
           link: "/guidelines/content/hash-labels",
+        },
+        {
+          text: "Refactoring Requirements",
+          link: "/guidelines/content/refactoring-requirements",
         },
       ],
     },
@@ -288,6 +312,10 @@ function sidebarDeveloperDocs(): DefaultTheme.SidebarItem[] {
         {
           text: "Am I Ready for Code Review?",
           link: "/developer-docs/am-i-ready-for-review",
+        },
+        {
+          text: "Retraining",
+          link: "/developer-docs/retraining",
         },
         {
           text: "Emulator Setup for Developers",

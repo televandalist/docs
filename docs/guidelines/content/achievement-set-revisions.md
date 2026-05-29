@@ -101,6 +101,8 @@ If you have new ideas after a plan has passed, start a new addendum revision pla
 
 - If you are adding a **similar** concept to one found in the set, where possible reuse the old concept and update it rather than make a new one. This prevents players from having to unnecessarily re-earn achievements, restricts needless changes to sets, and preserves good quality developer work and concepts.
 
+- If you are adding new achievements in which criteria can be proven by prior unlocks then prepare an Achievement Transfer request in `#cleanup-admin` to be processed once the set goes live. This helps to reduce player frustrations and the number of manual unlock requests coming through. For example: Unlock Achievement X for all users who earned Achievements Y and Z.
+
 - Since revisions vary in the amount of adjusted content, they are treated the same as an achievement set reservation. If three months have passed since your revision plan was approved, you will need to provide an update that details the current progress. Not doing so will invalidate the revision and the plan will need to be approved again with a new vote.
 
 ### No Need for Approval Vote
@@ -178,6 +180,8 @@ Any user wanting to change the game icon or badges of a set need to:
 - Doing this might also avoid needing a gauntlet vote if your icon or badges are preferred by them.
 - Ideally Both parties should work together to come to a satisfactory proposal.
 - Some authors opt out of requiring contact. Check the [Public Opt-Out Sheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vRRSNI9R-ezC0ma7x2BoU2JiZgMu26iht-sIPc56otfJa2sd_8QQCO-V4JXbfsfSUbrl54wib68-Pjp/pubhtml?gid=1195161231&single=true). If the author is listed as opting out of this revision type, they do not need to be contacted. To update your own Opt-Out information, use [this form](https://forms.gle/mgzv7RHbJEPCrxc77).
+- When contacting, be clear that this contact is for an icon gauntlet.
+- When contacting, always ask if the author would like to be pinged when the vote starts. This ensures the author knows this is an option.
 
 2. **Create** the game icon or new badges. For more info, see [Badge and Icon Creation](/guidelines/content/badge-and-icon-guidelines).
 
@@ -241,33 +245,3 @@ Revision voting is currently dev-only. While voting is exclusive to Discord, ple
 - You may contact them in any manner in which you can be reasonably certain they will see it (DMs preferred)
 - If you believe you may be blocked by the user, send a message to [DevCompliance](https://retroachievements.org/createmessage.php?t=DevCompliance&s=Revision%20Contact%20Request%20-%20[Author%20Name]) asking them to contact the author on your behalf. The 72hr maximum wait time will begin upon sending the message to DevCompliance. When doing so, state the user's name, type of revision, and the brief description of what your revision entails as if you were contacting the author directly.
 - Some authors opt out of requiring contact. Check the [Public Opt-Out Sheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vRRSNI9R-ezC0ma7x2BoU2JiZgMu26iht-sIPc56otfJa2sd_8QQCO-V4JXbfsfSUbrl54wib68-Pjp/pubhtml?gid=1195161231&single=true). If the author is listed as opting out of the revision type, they do not need to be contacted. To update your own Opt-Out information, use [this form](https://forms.gle/mgzv7RHbJEPCrxc77).
-
-## Maintainer Role Purpose and Qualification
-The achievement Maintainer role allows a developer to assume responsibility for an achievement. Future tickets and unlock credit will be assigned to achievement maintainers and maintainership is effectively a transfer of ownership. The original author does not lose authorship credit, ticket history, or unlock credit that occurred prior to the assignment of a new maintainer. If a maintainer loses or relinquishes the role, new tickets and unlocks will return to being given to the author. A maintainer can be assigned to an entire set or a portion of the achievements depending on which achievements were fixed. The maintainer role may only be approved and assigned by the DevCompliance team.
-
-Maintainership requests will be considered on a case by case basis for significant repairs. Correcting set-significant instability issues is the biggest factor when considering approval of the maintainer role. If a maintainer loses or leaves the role, new tickets and unlocks will return to being given to the original author until a new maintainer is assigned.
-
-### What May Qualify for Maintainership?
-A good candidate for maintainership will meet many of the following criteria:
-
-- Set demoted for necessary repairs by QA-Maintainers.
-- Existing logic was fundamentally flawed for the set or for a category of achievements and needed to be replaced in all of the affected achievements.
-- Problems in the set were causing regular tickets or other problematic quality issues.
-- Significant New RAM digging needed to be done to find replacement addresses or better addresses to use to accomplish the goals.
-- Significant logic re-work was necessary for proper functionality and stability.
-- Very few, if any logic conditions were retained in the new logic.
-- Any retained logic conditions were not the most important piece of data for functionality.
-- One-condition achievements where the final product is vastly changed.
-- Adding hash or language support requiring a rewrite that significantly changed the approach to logic.
-- Requestor has a history of fixing tickets in the set.
-- All tickets in the set have been resolved or closed.
- 
-### What Shall Not Qualify for Maintainership?
-Writing new logic for previously stable achievements is not sufficient to warrant maintainership.  Poor candidates include, but are not limited to:
-
-- Logic reworked that did not exhibit any issues (i.e. not prone to tickets or exploits).
-- A main change was simply adding Delta checks.
-- A main change was simply adding an in-game/in-stage, or other similar guarding condition.
-- Only added protection such as save protection, demo protection, or cheat protection.
-- Updating outdated logic of otherwise functional achievements to be in line with modern toolkit features and standards.
-- Relatively simple "drive-by" ticket fixes.
